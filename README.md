@@ -12,7 +12,7 @@ $ sudo ln -s `pwd`/now/cli.rb /bin/now
 $ echo "distribution=ubuntu" | sudo tee /etc/now.conf
 $ echo "includes=`pwd`/now/" | sudo tee -a /etc/now.conf
 ```
-After these commands have been run, there should be a symbollic link from
+After these commands have been run, there should be a symbolic link from
 `/bin/now` to `now/cli.rb` in the git repository. There should also be a
 configuration file located at `/etc/now.conf`.
 
