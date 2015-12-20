@@ -11,6 +11,10 @@ class Translator
         raise "Usage: now update [-y] [all]"
     end
 
+    def install(ctx)
+        return 'sudo apt-get install ' + ctx.args[0]
+    end
+
     def shutdown(ctx)
         return 'sudo shutdown -hP now'
     end
