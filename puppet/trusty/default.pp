@@ -1,4 +1,4 @@
 file { '/usr/local/bin/now':
     ensure => 'link',
-    target => '/vagrant/bin/arch.sh',
+    target => '/vagrant/bin/debian-pre-systemd.sh',
 }
