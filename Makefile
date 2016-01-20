@@ -5,7 +5,7 @@ build:
 
 install:
 	mkdir -p ${DESTDIR}/usr/bin
-	cp bin/now ${DESTDIR}/now
+	cp bin/now ${DESTDIR}/usr/bin/now
 
 clean:
 	rm -rf bin
