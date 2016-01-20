@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ ! $1 ]]; then
+    echo "Usage: ./configure [arch,debian,debian-pre-systemd]"
+    exit
+fi
+
+echo "$1" > ./build_target

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 import glob
 import importlib
 
@@ -12,7 +13,13 @@ if not os.path.exists(BIN_DIR):
 with open("now/now.sh") as f:
     source = f.read()
 
-for fn in glob.glob("now/distributions/*.py"):
+if len(sys.argv) < 2:
+    print("Run ./configure first")
+    sys.exit(0)
+
+build_target = sys.argv[1]
+
+for fn in glob.glob("now/distributions/{}.py".format(build_target)):
     fn = fn.replace("now/", "").replace(".py", "").replace("/", ".")
     mod = importlib.import_module(fn)
 
@@ -25,7 +32,7 @@ for fn in glob.glob("now/distributions/*.py"):
         sub = "\n    ".join(sub.split("\n"))
         output = output.replace("{{ " + command + " }}", sub)
 
-    output_fn = BIN_DIR + fn.split(".")[1] + ".sh"
+    output_fn = BIN_DIR + "now"
 
     with open(output_fn, "w") as f:
         f.write(output)

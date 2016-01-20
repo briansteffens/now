@@ -4,19 +4,37 @@ Common command translator for different Linux distributions.
 This is a python3 project which renders shell scripts for specific
 distributions.
 
-# Downloading the source and rendering for all distributions
+# Downloading the source
 
 ```bash
 $ git clone https://github.com/briansteffens/now
 $ cd now
+```
+
+# Rendering for Arch
+```bash
+$ ./configure arch
 $ make
 ```
 
-Supported distributions will be located in `./bin`. Choose one and symlink it
-to `/usr/local/bin`. For example, if on Arch:
+# Rendering for Debian/Ubuntu/etc (with systemd)
+```bash
+$ ./configure debian
+$ make
+```
+
+# Rendering for Debian/Ubuntu/etc (before systemd)
+```bash
+$ ./configure debian-pre-systemd
+$ make
+```
+
+The rendered file will be located at `./bin/now`.
+
+# Installation
 
 ```bash
-$ sudo ln -s `pwd`/bin/arch.sh /usr/local/bin/now
+$ sudo make install
 ```
 
 # Usage
