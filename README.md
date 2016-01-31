@@ -4,6 +4,10 @@ Common command translator for different Linux distributions.
 This is a python3 project which renders shell scripts for specific
 distributions.
 
+# Packages
+
+This program is available on the AUR at https://aur.archlinux.org/packages/now/
+
 # Downloading the source
 
 ```bash
